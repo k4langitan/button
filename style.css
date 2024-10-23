@@ -1,0 +1,161 @@
+:root {
+    --bg-color: #212121;
+    --primary-color: #956afa;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation */
+header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+/* Main content area */
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--bg-color);
+    padding: 1rem 2rem;
+    border-radius: 1.25rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarges the card on hover */
+    background-color: #333; /* Changes background color on hover */
+}
+
+/* Loader Styles */
+.loader {
+    color: rgb(124, 124, 124);
+    font-weight: 500;
+    font-size: 25px;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.words {
+    overflow: hidden;
+    position: relative;
+    margin-left: 10px;
+    height: 100%;
+}
+
+.words::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        var(--bg-color) 10%,
+        transparent 30%,
+        transparent 70%,
+        var(--bg-color) 90%
+    );
+    z-index: 20;
+}
+
+.word {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: var(--primary-color);
+    animation: spin 12s infinite; /* Slowed down animation */
+    transition: color 0.3s ease;
+}
+
+.word:hover {
+    color: #ffffff; /* Changes text color on hover */
+}
+
+/* Keyframes for smooth animation */
+@keyframes spin {
+    8% {
+        transform: translateY(-102%);
+    }
+    16% {
+        transform: translateY(-200%);
+    }
+    24% {
+        transform: translateY(-300%);
+    }
+    32% {
+        transform: translateY(-400%);
+    }
+    40% {
+        transform: translateY(-500%);
+    }
+    48% {
+        transform: translateY(-600%);
+    }
+    56% {
+        transform: translateY(-700%);
+    }
+    64% {
+        transform: translateY(-800%);
+    }
+    72% {
+        transform: translateY(-900%);
+    }
+    80% {
+        transform: translateY(-1000%);
+    }
+    88% {
+        transform: translateY(-1100%);
+    }
+    100% {
+        transform: translateY(-1200%);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 1rem;
+    color: #ffffff;
+}
